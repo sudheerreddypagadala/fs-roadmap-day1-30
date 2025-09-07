@@ -9,9 +9,10 @@
 - [ ] Add .gitignore and this README
 
 ## Tools I installed / configured
-- Node
-- Git
-- VSCode
+- Node: v20.15.0
+- Git: 2.41.0
+- VSCode: 1.95.0
+
 - Extensions: Prettier, ESLint, Live Server, GitLens
 
 ## Notes
