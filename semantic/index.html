@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Portfolio demo showing semantic HTML and accessibility basics." />
+  <title>Semantic & Accessible HTML Demo</title>
+</head>
+<body>
+  <header role="banner">
+    <div class="container">
+      <h1>Sudheer — Developer Portfolio (Demo)</h1>
+      <nav role="navigation" aria-label="Main navigation">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" role="main" class="container">
+    <section id="about" aria-labelledby="about-heading">
+      <h2 id="about-heading">About</h2>
+      <p>Short intro about you. Keep it concise and accessible.</p>
+    </section>
+
+    <section id="projects" aria-labelledby="projects-heading">
+      <h2 id="projects-heading">Projects</h2>
+      <article aria-labelledby="proj1-title">
+        <h3 id="proj1-title">Project 1 — Book Finder</h3>
+        <p>One-sentence description.</p>
+        <img src="/semantic/assets/book-finder-screenshot.png" alt="Screenshot of Book Finder app showing search results." width="600" />
+      </article>
+    </section>
+
+    <section id="contact" aria-labelledby="contact-heading">
+      <h2 id="contact-heading">Contact</h2>
+      <form action="#" method="post" aria-describedby="contact-desc">
+        <p id="contact-desc">Use the form to send a short message.</p>
+        <label for="name">Name</label>
+        <input id="name" name="name" type="text" required />
+
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" required />
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+
+        <button type="submit">Send</button>
+      </form>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    <p>© <span id="year"></span> Sudheer. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // small JS to set the year (progressive enhancement)
+    document.getElementById('year').innerText = new Date().getFullYear();
+  </script>
+</body>
+</html>
