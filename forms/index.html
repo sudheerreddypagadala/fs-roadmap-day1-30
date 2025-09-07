@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Forms Demo</title>
+</head>
+<body>
+  <h1>Forms Demo</h1>
+
+  <!-- Login Form -->
+  <section>
+    <h2>Login Form</h2>
+    <form action="/login" method="POST">
+      <label for="login-email">Email:</label>
+      <input
+        type="email"
+        id="login-email"
+        name="email"
+        placeholder="Enter your email"
+        required
+      />
+
+      <br /><br />
+
+      <label for="login-password">Password:</label>
+      <input
+        type="password"
+        id="login-password"
+        name="password"
+        placeholder="Enter your password"
+        minlength="6"
+        required
+      />
+
+      <br /><br />
+
+      <button type="submit">Login</button>
+    </form>
+  </section>
+
+  <hr />
+
+  <!-- Feedback Form -->
+  <section>
+    <h2>Feedback Form</h2>
+    <form action="/feedback" method="POST">
+      <label for="name">Name:</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        placeholder="Your full name"
+        required
+      />
+
+      <br /><br />
+
+      <label for="email">Email:</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        placeholder="Your email address"
+        required
+      />
+
+      <br /><br />
+
+      <label for="message">Message:</label>
+      <br />
+      <textarea
+        id="message"
+        name="message"
+        rows="5"
+        cols="30"
+        placeholder="Your feedback here..."
+        required
+      ></textarea>
+
+      <br /><br />
+
+      <input type="checkbox" id="subscribe" name="subscribe" />
+      <label for="subscribe">Subscribe to newsletter</label>
+
+      <br /><br />
+
+      <button type="submit">Send Feedback</button>
+    </form>
+  </section>
+</body>
+</html>
