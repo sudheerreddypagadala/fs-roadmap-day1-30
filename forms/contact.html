@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact — Forms Demo</title>
+  <link rel="stylesheet" href="contact.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>Contact Me</h1>
+    <p>If you have a question or want to collaborate, drop a message below.</p>
+
+    <form id="contactForm" action="#" method="POST" novalidate>
+      <div class="field">
+        <label for="name">Full name</label>
+        <input
+          id="name"
+          name="name"
+          type="text"
+          placeholder="Enter your full name"
+          required
+          aria-required="true"
+        />
+      </div>
+
+      <div class="field">
+        <label for="email">Email address</label>
+        <input
+          id="email"
+          name="email"
+          type="email"
+          placeholder="you@example.com"
+          required
+          aria-required="true"
+        />
+      </div>
+
+      <div class="field">
+        <label for="message">Message</label>
+        <textarea
+          id="message"
+          name="message"
+          rows="6"
+          placeholder="Tell me about your project or question..."
+          required
+          aria-required="true"
+          minlength="10"
+        ></textarea>
+      </div>
+
+      <div class="field checkbox-field">
+        <input id="subscribe" name="subscribe" type="checkbox" />
+        <label for="subscribe">Subscribe to occasional updates</label>
+      </div>
+
+      <div class="actions">
+        <button type="submit" class="btn">Send message</button>
+      </div>
+
+      <p id="formStatus" role="status" aria-live="polite" class="sr-only"></p>
+    </form>
+  </main>
+
+  <script>
+    // Small JS to provide friendly client-side validation UX (progressive enhancement)
+    (function () {
+      const form = document.getElementById('contactForm');
+      const status = document.getElementById('formStatus');
+
+      form.addEventListener('submit', function (e) {
+        // Let browser show constraint UI first; we'll enhance behavior:
+        if (!form.checkValidity()) {
+          // show first invalid field and a short message
+          e.preventDefault();
+          const firstInvalid = form.querySelector(':invalid');
+          firstInvalid.focus();
+          status.textContent = 'Please fix the highlighted fields.';
+          status.classList.remove('sr-only');
+          return;
+        }
+
+        // For demo: prevent real submission and show a success message
+        e.preventDefault();
+        status.textContent = 'Thanks! Your message was sent (demo).';
+        status.classList.remove('sr-only');
+        form.reset();
+      });
+    })();
+  </script>
+</body>
+</html>
